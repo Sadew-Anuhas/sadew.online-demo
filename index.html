@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sadew Anuhas - Web Developer, UI/UX Designer | Portfolio</title>
+    <meta name="description" content="Portfolio of Sadew Anuhas, a creative technologist from Sri Lanka specializing in Web Development, UI/UX Design, Software Development, Graphic Design, and Video Editing.">
+    <meta name="keywords" content="Sadew Anuhas, Web Developer, UI/UX Designer, Software Developer, Full Stack Student, Graphic Designer, Video Editor, Portfolio, Sri Lanka, Colombo, Web Design, Frontend, Backend">
+    <meta name="author" content="Sadew Anuhas">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[Your Website URL]"> <meta property="og:title" content="Sadew Anuhas - Web Developer, UI/UX Designer | Portfolio">
+    <meta property="og:description" content="Creative technologist specializing in Web Development, UI/UX Design, Software Development, Graphic Design, and Video Editing.">
+    <meta property="og:image" content="[Link to your preview image - e.g., /og-image.jpg]"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="[Your Website URL]"> <meta property="twitter:title" content="Sadew Anuhas - Web Developer, UI/UX Designer | Portfolio">
+    <meta property="twitter:description" content="Creative technologist specializing in Web Development, UI/UX Design, Software Development, Graphic Design, and Video Editing.">
+    <meta property="twitter:image" content="[Link to your preview image - e.g., /twitter-image.jpg]"> <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#f9fafb',      // Very Light Gray (gray-50) - Main BG
+                        'secondary': '#f1f5f9',    // Light Gray (slate-100) - Section BG
+                        'tertiary': '#ffffff',      // White - Card BG
+                        'accent': '#2563eb',      // Medium Blue (blue-600)
+                        'highlight': '#14b8a6',    // Teal (teal-500)
+                        'light-text': '#1f2937',  // Dark Gray (gray-800) - Main Text
+                        'medium-text': '#6b7280', // Medium Gray (gray-500) - Secondary Text
+                        'border-color': '#e5e7eb', // Light Gray Border (gray-200)
+                        'input-bg': '#ffffff',     // Input background (white)
+                        'primary-dark': '#0d1117',
+                    },
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'], },
+                    animation: { /* Keep animations */ },
+                    keyframes: { /* Keep keyframes */ },
+                    backgroundImage: { /* Keep backgroundImages */ },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-light-text font-sans antialiased overflow-x-hidden">
+
+    <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-primary transition-opacity duration-500 ease-in-out">
+        <div class="pulsing-dots flex space-x-2">
+            <div class="dot animate-pulse-dot"></div>
+            <div class="dot animate-pulse-dot animation-delay-150"></div> <div class="dot animate-pulse-dot animation-delay-300"></div> </div>
+    </div>
+
+    <div id="mobile-menu"
+         class="fixed top-0 right-0 h-full w-64 sm:w-72 bg-secondary shadow-lg border-l border-border-color z-[60]
+                transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+         aria-hidden="true">
+
+        <div class="pt-5 px-2 sm:px-4 h-full flex flex-col"> <div class="flex justify-end mb-5"> <button id="mobile-menu-close-button" aria-label="Close Menu" class="p-2 text-medium-text hover:text-accent text-2xl focus:outline-none focus:ring-2 focus:ring-accent rounded-full">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col flex-grow nav-links">
+                <a href="#about" class="nav-link mobile">About</a>
+                <a href="#services" class="nav-link mobile">Services</a>
+                <a href="#skills" class="nav-link mobile">Skills</a>
+                <a href="#projects" class="nav-link mobile">Projects</a>
+                <a href="#contact" class="nav-link mobile">Contact</a>
+                </nav>
+
+             <div class="pt-4 pb-8 text-center border-t border-border-color/30">
+                <p class="text-sm mb-4 text-medium-text">Connect</p>
+                 <div class="flex justify-center space-x-6 text-xl text-medium-text">
+                    <a href="mailto:[your-email@example.com]" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="[your-linkedin-url]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="[your-github-url]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="[your-medium-url]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="[your-youtube-url]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden opacity-0 transition-opacity duration-300 ease-in-out"></div> ```
+
+---
+
+
+
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-primary md:bg-primary/80 md:backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-accent hover:opacity-80 transition-opacity flex items-center"> Sadew Anuhas </a>
+            <div class="hidden md:flex items-center space-x-1 lg:space-x-2 nav-links">
+                <a href="#about" class="nav-link text-medium-text hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a href="#experience" class="nav-link text-medium-text hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                <a href="#skills"
+   class="nav-link text-medium-text hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium relative">
+    Skills <span class="absolute top-0 right-0 flex size-2 translate-y-0.5 -translate-x-0.5">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+      <span class="relative inline-flex size-2 rounded-full bg-red-500"></span>
+    </span>
+    </a>
+                <a href="#projects" class="nav-link text-medium-text hover:text-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                <a href="#contact" class="nav-link text-white bg-accent hover:opacity-80 transition-opacity px-4 py-1.5 rounded-md text-sm font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" aria-label="Open Menu" class="md:hidden focus:outline-none text-light-text text-2xl z-50 relative"> <i class="fas fa-bars"></i> </button>
+        </nav>
+    </header>
+
+     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 sm:w-72 bg-secondary shadow-lg border-l border-border-color z-[60] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden" aria-hidden="true">
+        <div class="pt-20 px-4 sm:px-6 h-full flex flex-col">
+            <button id="mobile-menu-close-button" aria-label="Close Menu" class="absolute top-5 right-5 text-medium-text hover:text-accent text-2xl focus:outline-none focus:ring-2 focus:ring-accent rounded"> <i class="fas fa-times"></i> </button>
+            <nav class="flex flex-col space-y-4 nav-links">
+                <a href="#about" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100">About</a>
+                <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100">Experience</a>
+                <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100">Skills</a>
+                <a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100">Projects</a>
+                <a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100">Contact</a>
+            </nav>
+            <div class="mt-auto pb-8 text-center text-medium-text">
+                <p class="text-sm mb-4">Connect</p>
+                 <div class="flex justify-center space-x-5 text-xl">
+                    <a href="mailto:[your-email@example.com]" class="hover:text-accent transition-colors" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="[your-linkedin-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="[your-github-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="[your-medium-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="[your-youtube-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                 </div>
+            </div>
+        </div>
+    </div>
+     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-[55] hidden md:hidden opacity-0 transition-opacity duration-300 ease-in-out"></div>
+
+
+     <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-24 md:pt-32 bg-gradient-to-b from-primary via-primary to-secondary">
+        <div id="three-canvas-container" class="absolute inset-0 z-0 opacity-40 md:opacity-60"></div>
+    
+         <div class="relative z-10 container mx-auto px-4 sm:px-6 h-full flex items-center">
+             <div class="max-w-3xl text-center md:text-left">
+                 <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-5 leading-tight">
+                     <span class="block text-light-text">Hi, I'm</span>
+                     <span class="gradient-text bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent animate-gradient-text">
+                         Sadew Anuhas
+                     </span>
+                 </h1>
+                 <p class="text-lg sm:text-xl md:text-2xl mb-10 text-medium-text animate-fade-in-up animation-delay-300">
+                     A creative <span class="font-semibold text-light-text">Web Developer</span>, <span class="font-semibold text-light-text">UI/UX Designer</span>, & <span class="font-semibold text-light-text">Software Developer</span> from Sri Lanka, crafting unique digital experiences. Currently studying Full Stack Development.
+                 </p>
+                 <div class="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up animation-delay-600 justify-center md:justify-start">
+                    <a href="#projects" class="inline-block bg-accent hover:opacity-90 text-white font-medium px-8 py-3 rounded-lg transition-opacity duration-300 shadow-lg text-center">
+                        Explore My Work
+                    </a>
+                    <a href="#contact" class="inline-block bg-tertiary border border-border-color text-light-text hover:border-accent hover:text-accent font-medium px-8 py-3 rounded-lg transition-all duration-300 text-center">
+                        Let's Talk
+                    </a>
+                 </div>
+            </div>
+         </div>
+         </section>
+
+    <main class="relative z-10">
+        <section id="about" class="py-24 md:py-32 bg-secondary overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-3 text-left reveal-item">
+                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-light-text">
+                        About <span class="text-accent">Me</span>
+                     </h2>
+                     <p class="text-lg text-medium-text mb-4">
+                        Hello! I'm Sadew Anuhas, a multi-passionate creative technologist from Colombo, Sri Lanka. My journey revolves around the fascinating intersection of code, design, and digital media. I identify as a <span class="text-light-text font-medium">Web Developer</span>, <span class="text-light-text font-medium">UI/UX Designer</span>, <span class="text-light-text font-medium">Software Developer</span>, <span class="text-light-text font-medium">Graphic Designer</span>, and <span class="text-light-text font-medium">Video Editor</span>.
+                     </p>
+                     <p class="text-lg text-medium-text mb-4">
+                        Currently, I'm actively expanding my expertise as a <span class="text-light-text font-medium">Full Stack student</span>, driven by a desire to build seamless and impactful digital solutions from concept to deployment. I enjoy the challenge of solving complex problems, whether it's architecting efficient backend systems, designing intuitive user interfaces, or crafting pixel-perfect visuals.
+                     </p>
+                     <p class="text-lg text-medium-text mb-6">
+                        I'm proficient with tools like Adobe Illustrator, After Effects, Premiere Pro, and CapCut, and I'm always exploring new technologies in the web development and software engineering space. My goal is to leverage my diverse skillset to create meaningful and engaging experiences. Let's connect and build something amazing!
+                     </p>
+                     <div class="flex flex-wrap gap-x-6 gap-y-2 text-accent text-2xl mb-8">
+                         <i class="fas fa-code" title="Web/Software Development"></i>
+                         <i class="fas fa-object-ungroup" title="UI/UX Design"></i>
+                         <i class="fas fa-palette" title="Graphic Design"></i>
+                         <i class="fas fa-video" title="Video Editing"></i>
+                         <i class="fas fa-graduation-cap" title="Full Stack Student"></i>
+                         <i class="fas fa-lightbulb" title="Problem Solving"></i>
+                     </div>
+                     <a href="[Link to your Resume/CV - Optional]" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-medium">
+                         View My Resume <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                     </a>
+                </div>
+                <div class="md:col-span-2 flex justify-center items-center reveal-item animation-delay-100">
+                    <div class="md:col-span-2 flex justify-center items-center reveal-item animation-delay-100">
+                        <div class="w-full aspect-square max-w-md rounded-lg overflow-hidden shadow-xl border border-border-color bg-tertiary relative">
+                            <img
+                                src="./assets/me.png"
+                                alt="Sadew Anuhas - Professional Photo"
+                                class="w-full h-full object-cover rounded-lg"
+                                loading="lazy" />
+                             </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 md:py-32 bg-primary">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-light-text">Work & <span class="text-highlight">Project Experience</span></h2>
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border-color transform -translate-x-1/2 hidden md:block"></div>
+
+                    <div class="timeline-item mb-12 flex md:items-center w-full reveal-item">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="hidden md:block relative w-8 h-8 bg-secondary border-2 border-accent rounded-full z-10 mx-auto -ml-4"></div>
+                         <div class="md:w-1/2 md:pl-8 w-full">
+                             <div class="bg-tertiary p-6 rounded-lg shadow-md border border-border-color">
+                                <span class="text-sm font-semibold text-accent uppercase block mb-1">2023 - Featured Project</span>
+                                <h3 class="text-xl font-semibold mb-2 text-light-text">Logo Wizardry: Brand Identity Design</h3>
+                                <p class="text-medium-text text-sm mb-3 font-medium">Freelance (via Contra)</p>
+                                <p class="text-light-text text-sm">...</p> </div>
+                         </div>
+                    </div>
+                    <div class="timeline-item mb-12 flex md:flex-row-reverse md:items-center w-full reveal-item">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="hidden md:block relative w-8 h-8 bg-secondary border-2 border-accent rounded-full z-10 mx-auto -mr-4"></div>
+                        <div class="md:w-1/2 md:pr-8 w-full">
+                             <div class="bg-tertiary p-6 rounded-lg shadow-md border border-border-color">
+                                <span class="text-sm font-semibold text-accent uppercase block mb-1">2023 - Featured Project</span>
+                                <h3 class="text-xl font-semibold mb-2 text-light-text">Unique Social Media Post Design</h3>
+                                <p class="text-medium-text text-sm mb-3 font-medium">Freelance (via Contra)</p>
+                                <p class="text-light-text text-sm">...</p> </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-12 flex md:items-center w-full reveal-item">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="hidden md:block relative w-8 h-8 bg-secondary border-2 border-accent rounded-full z-10 mx-auto -ml-4"></div>
+                         <div class="md:w-1/2 md:pl-8 w-full">
+                             <div class="bg-tertiary p-6 rounded-lg shadow-md border border-border-color">
+                                <span class="text-sm font-semibold text-accent uppercase block mb-1">2020 - 2023</span>
+                                <h3 class="text-xl font-semibold mb-2 text-light-text">Video Editing Point</h3>
+                                <p class="text-medium-text text-sm mb-3 font-medium">Freelance (via Fiverr)</p>
+                                <p class="text-light-text text-sm">...</p> </div>
+                         </div>
+                    </div>
+                    <div class="timeline-item mb-12 flex md:flex-row-reverse md:items-center w-full reveal-item">
+                         <div class="hidden md:block w-1/2"></div>
+                         <div class="hidden md:block relative w-8 h-8 bg-secondary border-2 border-highlight rounded-full z-10 mx-auto -mr-4"></div>
+                         <div class="md:w-1/2 md:pr-8 w-full">
+                             <div class="bg-tertiary p-6 rounded-lg shadow-md border border-border-color">
+                                <span class="text-sm font-semibold text-highlight uppercase block mb-1">Ongoing</span>
+                                <h3 class="text-xl font-semibold mb-2 text-light-text">Content Creation</h3>
+                                <p class="text-medium-text text-sm mb-3 font-medium">Medium & YouTube</p>
+                                <p class="text-light-text text-sm">...</p> </div>
+                         </div>
+                    </div>
+                     <div class="timeline-item mb-12 flex md:items-center w-full reveal-item">
+                         <div class="hidden md:block w-1/2"></div>
+                         <div class="hidden md:block relative w-8 h-8 bg-secondary border-2 border-accent rounded-full z-10 mx-auto -ml-4"></div>
+                         <div class="md:w-1/2 md:pl-8 w-full">
+                             <div class="bg-tertiary p-6 rounded-lg shadow-md border border-border-color">
+                                <span class="text-sm font-semibold text-accent uppercase block mb-1">2022 - Present</span>
+                                <h3 class="text-xl font-semibold mb-2 text-light-text">Full Stack Development Studies</h3>
+                                <p class="text-medium-text text-sm mb-3 font-medium">UOM</p>
+                                <p class="text-light-text text-sm">
+                                    - Focusing on MERN stack, Python, database design, and software architecture.
+                                    - Continuously learning and applying development best practices.
+                                </p>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 md:py-32 bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-light-text">Technical & <span class="text-accent">Creative Skills</span></h2>
+
+                <h3 class="text-2xl font-semibold text-center mb-8 text-highlight reveal-item">Web & Software Development</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-12 justify-center">
+                    <div class="skill-card bg-tertiary reveal-item"> <div class="icon"><i class="fab fa-html5"></i></div> <h3>HTML5</h3> <p>Web Structure</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-100"> <div class="icon"><i class="fab fa-css3-alt"></i></div> <h3>CSS3</h3> <p>Styling & Layout</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-200"> <div class="icon"><i class="fab fa-js-square"></i></div> <h3>JavaScript</h3> <p>Interactivity</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-300"> <div class="icon"><i class="fab fa-react"></i></div> <h3>React</h3> <p>Frontend Library</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-400"> <div class="icon"><i class="fab fa-node-js"></i></div> <h3>Node.js</h3> <p>Backend Runtime</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-500"> <div class="icon"><i class="fas fa-database"></i></div> <h3>Databases</h3> <p>Data Management</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-600"> <div class="icon"><i class="fas fa-laptop-code"></i></div> <h3>Full Stack Concepts</h3> <p>Architecture</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-700"> <div class="icon"><i class="fas fa-server"></i></div> <h3>API Development</h3> <p>Integration</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-800"> <div class="icon"><i class="fas fa-code-branch"></i></div> <h3>Software Dev</h3> <p>Principles</p> </div>
+                </div>
+
+                 <h3 class="text-2xl font-semibold text-center mb-8 text-highlight reveal-item animation-delay-100">Design</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-12 justify-center">
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-200"> <div class="icon"><i class="fas fa-signature"></i></div> <h3>Logo Design</h3> <p>Brand Identity</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-300"> <div class="icon"><i class="fas fa-object-group"></i></div> <h3>Graphic Design</h3> <p>Visual Communication</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-400"> <div class="icon"><i class="fas fa-mobile-alt"></i></div> <h3>Social Media Design</h3> <p>Platform Graphics</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-500"> <div class="icon"><i class="fas fa-palette"></i></div> <h3>UI/UX Design</h3> <p>User Experience</p> </div>
+                    <div class="skill-card bg-tertiary reveal-item animation-delay-600"> <div class="icon"><i class="fas fa-box-open"></i></div> <h3>Packaging Design</h3> <p>Product Presentation</p> </div>
+                </div>
+
+                 <h3 class="text-2xl font-semibold text-center mb-8 text-highlight reveal-item animation-delay-200">Video Editing & Motion Graphics</h3>
+                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-12 justify-center">
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-300"> <div class="icon"><i class="fas fa-video"></i></div> <h3>Video Editing</h3> <p>Storytelling & Flow</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-400"> <div class="icon"><i class="fas fa-film"></i></div> <h3>Motion Graphics</h3> <p>Engaging Visuals</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-500"> <div class="icon"><i class="fas fa-camera-retro"></i></div> <h3>Photography/Videography</h3> <p>Visual Capture</p> </div>
+                 </div>
+
+                 <h3 class="text-2xl font-semibold text-center mb-8 text-highlight reveal-item animation-delay-300">Tools & Software</h3>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-12 justify-center">
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-400"> <div class="icon"><i class="fas fa-vector-square"></i></div> <h3>Adobe Illustrator</h3> <p>Vector Graphics</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-500"> <div class="icon"><i class="fas fa-magic"></i></div> <h3>Adobe After Effects</h3> <p>Motion & VFX</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-600"> <div class="icon"><i class="fas fa-cut"></i></div> <h3>Adobe Premiere Pro</h3> <p>Video NLE</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-700"> <div class="icon"><i class="fas fa-crop-alt"></i></div> <h3>CapCut</h3> <p>Mobile/Quick Editing</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-800"> <div class="icon"><i class="fab fa-figma"></i></div> <h3>Figma</h3> <p>UI/UX Design</p> </div>
+                      <div class="skill-card bg-tertiary reveal-item animation-delay-900"> <div class="icon"><i class="fab fa-git-alt"></i></div> <h3>Git & GitHub</h3> <p>Version Control</p> </div>
+                 </div>
+
+                 <h3 class="text-2xl font-semibold text-center mb-8 text-highlight reveal-item animation-delay-400">Transferable Skills</h3>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 justify-center">
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-500"> <div class="icon"><i class="fas fa-lightbulb"></i></div> <h3>Problem Solving</h3> <p>Analytical Thinking</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-600"> <div class="icon"><i class="far fa-clock"></i></div> <h3>Time Management</h3> <p>Efficiency</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-700"> <div class="icon"><i class="fas fa-comments"></i></div> <h3>Communication</h3> <p>Clarity & Collaboration</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-800"> <div class="icon"><i class="fas fa-chess-knight"></i></div> <h3>Strategic Thinking</h3> <p>Planning</p> </div>
+                     <div class="skill-card bg-tertiary reveal-item animation-delay-900"> <div class="icon"><i class="fas fa-sync-alt"></i></div> <h3>Adaptability</h3> <p>Learning Agility</p> </div>
+                 </div>
+            </div>
+        </section>
+
+
+        <section id="projects" class="py-24 md:py-32 bg-primary">
+            <div class="container mx-auto px-4 sm:px-6">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-light-text">Featured <span class="text-highlight">Projects</span></h2>
+                <div id="project-filters" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 reveal-item">
+                     <button class="filter-btn light active" data-filter="all">All</button>
+                     <button class="filter-btn light" data-filter="logo-design">Logo Design</button>
+                     <button class="filter-btn light" data-filter="social-media">Social Media</button>
+                     <button class="filter-btn light" data-filter="video-editing">Video Editing</button>
+                     <button class="filter-btn light" data-filter="web-dev">Web Dev</button> </div>
+                <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <div class="project-card light reveal-item" data-tags="logo-design illustrator graphic-design">
+                         <div class="placeholder-icon light"><i class="fas fa-signature"></i></div>
+                         <div class="content">
+                             <h3 class="text-light-text">Logo Wizardry: Brand Identities</h3>
+                             <p class="text-medium-text">Crafting unique visual identities using Adobe Illustrator, focusing on scalability and brand alignment.</p>
+                             <div class="tags"> <span class="tech-tag light">Logo Design</span> <span class="tech-tag light">Illustrator</span> <span class="tech-tag light">Graphic Design</span> </div>
+                             <div class="links"> <a href="[Link to Contra Project]" target="_blank" rel="noopener noreferrer" class="text-accent">View Details</a> <a href="[Link to Contra]" target="_blank" rel="noopener noreferrer" class="text-medium-text">Source: Contra</a> </div>
+                         </div>
+                    </div>
+                     <div class="project-card light reveal-item" data-tags="social-media illustrator graphic-design logo-design">
+                         <div class="placeholder-icon light"><i class="fas fa-share-alt"></i></div>
+                         <div class="content">
+                             <h3 class="text-light-text">Unique Social Media Post Designs</h3>
+                              <p class="text-medium-text">Designing platform-optimized graphics for social media campaigns, enhancing brand presence.</p>
+                              <div class="tags"> <span class="tech-tag light">Social Media</span> <span class="tech-tag light">Illustrator</span> <span class="tech-tag light">Graphic Design</span> <span class="tech-tag light">Logo Design</span> </div>
+                             <div class="links"> <a href="[Link to Contra Project]" target="_blank" rel="noopener noreferrer" class="text-accent">View Details</a> <a href="[Link to Contra]" target="_blank" rel="noopener noreferrer" class="text-medium-text">Source: Contra</a> </div>
+                         </div>
+                    </div>
+                     <div class="project-card light reveal-item" data-tags="video-editing after-effects premiere-pro graphic-design digital-marketing">
+                         <div class="placeholder-icon light"><i class="fas fa-video"></i></div>
+                         <div class="content">
+                             <h3 class="text-light-text">Video Editing Point</h3>
+                              <p class="text-medium-text">Editing video with motion graphics using After Effects & Premiere Pro for digital marketing.</p>
+                              <div class="tags"> <span class="tech-tag light">Video Editing</span> <span class="tech-tag light">After Effects</span> <span class="tech-tag light">Premiere Pro</span> <span class="tech-tag light">Graphic Design</span> <span class="tech-tag light">Digital Marketing</span></div>
+                             <div class="links"> <a href="[Link to Contra Project]" target="_blank" rel="noopener noreferrer" class="text-accent">View Details</a> <a href="[Link to Contra]" target="_blank" rel="noopener noreferrer" class="text-medium-text">Source: Contra</a> </div>
+                         </div>
+                    </div>
+                     <div class="project-card light reveal-item" data-tags="web-dev react fullstack ui-ux"> <div class="placeholder-icon light"><i class="fas fa-code"></i></div>
+                         <div class="content">
+                             <h3 class="text-light-text">COLONIA Web App</h3>
+                              <p class="text-medium-text">Developed a webapp based a overseas country - using React & Tailwind CSS. Focused on clean UI/UX and performance.</p>
+                              <div class="tags"> <span class="tech-tag light">Web Dev</span> <span class="tech-tag light">React</span> <span class="tech-tag light">Fullstack</span> <span class="tech-tag light">UI/UX</span></div>
+                             <div class="links"> <a href="[Link to Live Demo/GitHub]" target="_blank" rel="noopener noreferrer" class="text-accent">View Live/Code</a> <a href="[Link to GitHub]" target="_blank" rel="noopener noreferrer" class="text-medium-text">GitHub</a> </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-24 md:py-32 bg-secondary">
+             <div class="container mx-auto px-4 sm:px-6">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-light-text">Client <span class="text-accent">Feedback</span></h2>
+                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                     <div class="testimonial-card light reveal-item">
+                         <i class="fas fa-quote-left text-accent text-3xl mb-4 block"></i>
+                         <p class="text-medium-text italic mb-6">"Done my work! Great services, Thank you!"</p>
+                         <div class="flex items-center">
+                            <div class="avatar-placeholder light"><i class="fas fa-user"></i></div>
+                            <div> <p class="font-semibold text-light-text">John Zoal</p> <p class="text-sm text-medium-text">UK Client</p> </div>
+                         </div>
+                     </div>
+                     <div class="testimonial-card light reveal-item animation-delay-100">
+                         <i class="fas fa-quote-left text-highlight text-3xl mb-4 block"></i>
+                         <p class="text-medium-text italic mb-6">"ඇත්තටම මාරම විදියෙ Service එකක් ඒක Thank You, ජය!"</p>
+                         <div class="flex items-center">
+                             <div class="avatar-placeholder light"><i class="fas fa-user"></i></div>
+                             <div> <p class="font-semibold text-light-text">Kavindi Jayasinghe</p> <p class="text-sm text-medium-text">University of Peradeniya</p> </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+        <section id="contact" class="contact-section relative py-24 md:py-32 bg-primary overflow-hidden">
+             <div class="absolute inset-0 opacity-[0.05] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSJ0cmFuc3BhcmVudCIvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9JyNjYWQxZDYnIHN0cm9rZS13aWR0aD0nMC41Jy8+Cjwvc3ZnPg==')]"></div>
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+                    <div class="reveal-item">
+                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-light-text">Let's Connect & <span class="text-accent">Create</span></h2>
+                         <p class="text-lg text-medium-text mb-8">Whether you have a project in mind, a collaboration idea, or just want to discuss the intersection of creativity and technology, I'd love to hear from you.</p>
+                         <div class="space-y-5 mb-8 text-light-text">
+                             <a href="mailto:[your-professional-email@example.com]" class="flex items-center group"> <i class="fas fa-envelope text-accent text-xl mr-4 w-6 text-center"></i> <span class="text-light-text group-hover:text-accent transition-colors">imsadewanuhas@gmail.com</span> </a>
+                             <div class="flex items-center"> <i class="fas fa-phone text-accent text-xl mr-4 w-6 text-center"></i> <span class="text-light-text">+9476 5590 888</span> </div>
+                             <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-accent text-xl mr-4 w-6 text-center mt-1"></i>
+                                <div class="text-light-text">
+                                    <span>Colombo, Sri Lanka</span>
+                                    </div>
+                            </div>
+                             <div class="flex items-center"> <i class="fas fa-circle text-green-500 text-sm mr-4 w-6 text-center animate-pulse-subtle"></i> <span class="text-medium-text">Open to freelance opportunities</span> </div>
+                         </div>
+                         <p class="text-medium-text mb-4">Find me on:</p>
+                         <div class="flex space-x-5 text-2xl text-medium-text">
+                            <a href="[your-linkedin-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="[your-github-url - if applicable]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="[your-medium-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                            <a href="[your-youtube-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                            <a href="[your-contra-url]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110" aria-label="Contra">C</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-tertiary p-8 rounded-lg shadow-xl border border-border-color reveal-item animation-delay-100">
+                         <h3 class="text-2xl font-semibold mb-6 text-light-text">Send me a message</h3>
+                         <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-medium-text mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required
+                                       class="form-input" /> </div>
+                             <div>
+                                <label for="email" class="block text-sm font-medium text-medium-text mb-1">Your Email</label>
+                                 <input type="email" id="email" name="email" placeholder="Enter your email address" required
+                                        class="form-input" /> </div>
+                             <div>
+                                <label for="message" class="block text-sm font-medium text-medium-text mb-1">Your Message</label>
+                                 <textarea id="message" name="message" placeholder="How can I help you?" rows="5" required
+                                           class="form-input"></textarea> </div>
+                            <button type="submit"
+                                    class="contact-submit-btn group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white transition-all duration-300 ease-out rounded-lg shadow-lg w-full md:w-auto bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent">
+                                 <span class="relative z-10">
+                                     Send Inquiry <i class="fas fa-paper-plane ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                                 </span>
+                             </button>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary border-t border-border-color py-10 text-center text-medium-text">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 space-y-2 sm:space-y-0">
+                 <div class="text-sm"> &copy; <span id="current-year-footer">2025</span> Sadew Anuhas. All Rights Reserved. </div>
+                 <div class="flex space-x-4">
+                     <a href="#about" class="hover:text-accent transition-colors text-sm">About</a>
+                     <a href="#projects" class="hover:text-accent transition-colors text-sm">Projects</a>
+                     <a href="[Link to Resume/CV - Optional]" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors text-sm">Resume</a>
+                 </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+    <script src="three-bg.js"></script> <script src="p5-sketch.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

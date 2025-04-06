@@ -1,0 +1,247 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base HTML/Body styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust based on final fixed header height */
+}
+
+body {
+    @apply bg-primary text-light-text font-sans antialiased;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* === Reusable Component Styles === */
+@layer components {
+    /* Headings */
+    .section-heading { @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-light-text; }
+    .subsection-heading { @apply text-2xl md:text-3xl font-semibold text-center mb-10 text-highlight; }
+
+    /* Paragraphs */
+    .section-paragraph { @apply text-base md:text-lg text-medium-text mb-4 leading-relaxed; }
+
+    /* Links */
+    .link { @apply text-accent hover:underline font-medium transition-colors duration-200; }
+    .social-link { @apply text-medium-text hover:text-accent transition-colors duration-200 transform hover:scale-110; }
+    .footer-link { @apply text-medium-text hover:text-accent transition-colors duration-200; }
+
+    /* Buttons */
+    .hero-btn { @apply inline-block font-medium px-8 py-3 rounded-lg transition-all duration-300 shadow-lg text-center text-base md:text-lg; }
+    .hero-btn.primary { @apply bg-accent hover:opacity-90 text-white transform hover:scale-105; }
+    .hero-btn.secondary { @apply bg-tertiary border border-border-color text-light-text hover:border-accent hover:text-accent transform hover:scale-105; }
+
+    /* Contact Form Input */
+    .form-label { @apply block text-sm font-medium text-medium-text mb-1 cursor-pointer; }
+    .form-input {
+        @apply block w-full px-4 py-3 text-sm text-light-text bg-input-bg border border-border-color rounded-lg placeholder-medium-text transition duration-150 ease-in-out focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    }
+    .form-input:focus {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 0 0 1px theme('colors.accent / 50%');
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 30px theme('colors.input-bg', '#ffffff') inset !important;
+        -webkit-text-fill-color: theme('colors.light-text', '#111827') !important;
+        caret-color: theme('colors.light-text', '#111827');
+    }
+    textarea.form-input { @apply min-h-[120px] resize-vertical; }
+
+    /* Tech Tag - Light Theme */
+    .tech-tag.light { @apply inline-block bg-secondary text-xs font-medium text-accent py-1 px-3 rounded-full border border-border-color mr-2 mb-2 whitespace-nowrap; }
+
+    /* Project Filter Button - Light Theme (Outline/Ring Active Style) */
+    .filter-btn.light { @apply px-4 py-2 text-sm font-medium rounded-full border border-border-color text-medium-text bg-tertiary transition-all duration-200 ease-in-out ring-1 ring-transparent ring-offset-1 ring-offset-primary hover:bg-border-color hover:text-light-text focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1 focus-visible:ring-offset-primary cursor-pointer; }
+    .filter-btn.light.active { background-color: theme('colors.accent-light'); color: theme('colors.accent'); border-color: transparent; font-weight: theme('fontWeight.semibold'); @apply ring-2 ring-accent; }
+    .filter-btn.light.active:hover { background-color: theme('colors.blue.200', '#bfdbfe'); color: theme('colors.accent'); @apply ring-2 ring-accent; }
+
+    /* Skill Card - Light Theme */
+    .skill-card { @apply bg-tertiary p-5 md:p-6 text-center rounded-lg border border-border-color shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300 transform hover:-translate-y-1; }
+    .skill-card .icon { @apply text-4xl mb-3 text-accent; }
+    .skill-card h3 { @apply text-base md:text-lg font-semibold text-light-text mb-1; }
+    .skill-card p { @apply text-xs md:text-sm text-medium-text; }
+    .skills-grid { @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 justify-center; }
+
+     /* Project Card - Light Theme */
+    .project-card.light { @apply flex flex-col bg-tertiary rounded-lg shadow-xl overflow-hidden border border-border-color hover:border-highlight hover:shadow-highlight/10 transition-all duration-300 group; opacity: 1; transform: scale(1) translateY(0); }
+    .project-card.light .placeholder-icon { @apply h-52 md:h-56 bg-secondary flex items-center justify-center relative overflow-hidden text-8xl text-border-color transition-transform duration-500 group-hover:scale-110 group-hover:text-highlight; }
+    .project-card.light .placeholder-icon::after { content: none; }
+    .project-card.light .content { @apply p-5 md:p-6 flex flex-col flex-grow; }
+    .project-card.light .content h3 { @apply text-light-text; }
+    .project-card.light .content p { @apply text-medium-text; }
+    .project-card.light .content .tags { @apply mb-5; }
+    .project-card.light .content .links { @apply border-t border-border-color; }
+    .project-card.light .content .links a { @apply text-accent; }
+    .project-card.light .content .links a:last-child { @apply text-medium-text hover:text-accent; }
+
+    /* Testimonial Card - Light Theme */
+    .testimonial-card.light { @apply bg-tertiary p-6 md:p-8 rounded-lg border border-border-color shadow-lg; }
+    .testimonial-card.light .avatar-placeholder { @apply w-12 h-12 rounded-full bg-gradient-to-br from-accent to-highlight flex items-center justify-center text-white font-bold text-xl mr-4 shrink-0; }
+    .testimonial-card.light p.italic { @apply text-medium-text; }
+    .testimonial-card.light .font-semibold { @apply text-light-text; }
+
+     /* Service Card */
+     .service-card { @apply bg-tertiary p-6 rounded-lg border border-border-color shadow-md text-center transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-accent; }
+     .service-card .icon { @apply text-4xl mb-4 text-accent; }
+     .service-card .title { @apply text-xl font-semibold text-light-text mb-2; }
+     .service-card .description { @apply text-sm text-medium-text leading-relaxed; }
+
+     /* Process Step */
+      .process-step { @apply bg-tertiary p-6 rounded-lg border border-border-color shadow-md text-center relative pt-12; }
+      .process-step .icon { @apply absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center text-xl border-4 border-primary; }
+      .process-step .step-number { @apply text-sm font-bold text-highlight mb-1; }
+      .process-step .step-title { @apply text-lg font-semibold text-light-text mb-2; }
+      .process-step .step-description { @apply text-sm text-medium-text; }
+
+    /* Contact Button */
+     .contact-submit-btn { transition: background 0.3s ease-out, transform 0.2s ease-out; }
+     .contact-submit-btn:hover:not(:disabled) { transform: scale(1.03); }
+     .contact-submit-btn:disabled { @apply opacity-70 cursor-not-allowed; }
+
+} /* End of @layer components */
+
+/* === Header Styling - Light Theme === */
+#header { @apply bg-primary md:bg-primary/80 md:backdrop-blur-sm shadow-sm; transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; @apply border-b border-transparent; }
+#header.scrolled { @apply bg-primary/90 backdrop-blur-lg shadow-md border-border-color/50; }
+#header .nav-link, #mobile-menu .nav-link { @apply transition-colors duration-200; }
+#header nav:not(#mobile-menu nav) .nav-link { @apply text-medium-text hover:text-accent px-3 py-2 rounded-md text-sm font-medium; }
+#header nav:not(#mobile-menu nav) .nav-link.active { @apply bg-secondary text-accent font-semibold; }
+#header .nav-link.contact-btn { @apply text-white bg-accent hover:opacity-90 hover:text-white px-4 py-1.5 border-0; }
+
+/* === Mobile Menu Styling - Light Theme === */
+#mobile-menu { @apply bg-secondary border-l border-border-color; }
+#mobile-menu .nav-link.mobile { @apply block px-3 py-2 rounded-md text-base font-medium text-medium-text hover:text-accent hover:bg-gray-100; }
+#mobile-menu .nav-link.mobile.active { @apply bg-accent text-white font-semibold hover:bg-accent; }
+
+/* === Mobile Menu Animation === */
+#mobile-menu.open { @apply transform translate-x-0; }
+#mobile-menu-overlay { transition: opacity 0.3s ease-in-out; }
+#mobile-menu-overlay.visible { @apply block opacity-100; }
+
+/* === Canvas Containers === */
+#three-canvas-container canvas, #p5-canvas-container canvas { display: block; width: 100% !important; height: 100% !important; position: absolute; top: 0; left: 0; }
+#p5-canvas-container { position: relative; }
+
+/* === Timeline Styling - Light Theme === */
+.timeline-item { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+.timeline-item > div:nth-child(2):not(:first-child) { @apply bg-secondary border-accent; }
+.timeline-item:nth-child(even) > div:nth-child(2):not(:first-child) { @apply border-highlight; }
+.timeline-item > div:last-child > div { @apply bg-tertiary border-border-color; }
+@media (max-width: 767px) { .timeline-item > div:last-child > div { @apply border-l-4 border-border-color; } }
+
+/* === Preloader Styles === */
+#preloader { /* Base styles applied via Tailwind in HTML */ }
+.pulsing-dots { /* Flex applied in HTML */ }
+.dot { @apply w-3 h-3 bg-accent rounded-full opacity-20; } /* Use w-3 h-3 for 12px */
+.animate-pulse-dot { animation: pulse-dot 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+@keyframes pulse-dot { 0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; } 40% { transform: scale(1.0); opacity: 1; } }
+#preloader.preloader-hidden { opacity: 0; visibility: hidden; /* pointer-events: none; */ }
+.animation-delay-150 { animation-delay: 0.15s !important; } /* Ensure !important if needed */
+.animation-delay-300 { animation-delay: 0.3s !important; }
+
+/* === Reveal Animations === */
+.reveal-item { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.reveal-item.from-left { transform: translateX(-30px); opacity: 0; }
+.reveal-item.from-right { transform: translateX(30px); opacity: 0; }
+.reveal-item.zoom-in { transform: scale(0.9); opacity: 0; }
+.reveal-item.visible { opacity: 1; transform: none !important; }
+.animation-delay-100 { transition-delay: 0.1s !important; }
+.animation-delay-200 { transition-delay: 0.2s !important; }
+.animation-delay-300 { transition-delay: 0.3s !important; }
+.animation-delay-400 { transition-delay: 0.4s !important; }
+.animation-delay-500 { transition-delay: 0.5s !important; }
+
+/* === Gradient Text Animation === */
+@keyframes gradient-text { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.animate-gradient-text { background-size: 200% auto; animation: gradient-text 5s ease infinite; }
+
+/* === Contact Section === */
+.contact-section { /* Background pattern in HTML */ }
+
+/* === Responsive Adjustments === */
+@media (max-width: 767px) {
+     html { scroll-padding-top: 70px; }
+     .section-heading { @apply text-3xl; }
+     .subsection-heading { @apply text-2xl mb-8; }
+     #project-filters { @apply gap-2 justify-start; }
+     .filter-btn.light { @apply px-3 py-1.5 text-xs; }
+     #hero { @apply pt-20; }
+     #hero h1 { @apply text-4xl sm:text-5xl; }
+     #hero p { @apply text-lg; }
+     #hero .animate-fade-in-up.animation-delay-600 { @apply flex flex-col space-y-4 space-x-0 items-center; }
+     #hero .animate-fade-in-up.animation-delay-600 a { @apply w-full max-w-xs; }
+     #skills .grid { @apply gap-4; }
+     .skill-card { @apply p-4; }
+     .skill-card h3 { @apply text-base; }
+     .skill-card .icon { @apply text-3xl mb-2;}
+     .project-card.light .placeholder-icon { @apply h-48 text-7xl; }
+     .project-card.light .content { @apply p-4; }
+     #contact .grid { @apply grid-cols-1; }
+     #contact .reveal-item:last-child { transition-delay: 0s !important; }
+     #process .grid { @apply grid-cols-1 sm:grid-cols-2; }
+     #process .process-step { @apply pt-16; }
+     #process .icon { @apply -top-8 w-16 h-16 text-2xl; }
+     .timeline-item > div:last-child { @apply w-full pl-0 pr-0; margin-left: 0 !important; margin-right: 0 !important; }
+}
+
+**2. CSS Code (Add/Update these rules in `style.css`)**
+
+```css
+/* === Mobile Menu Styling - Light Theme (Redesigned) === */
+#mobile-menu {
+    @apply bg-secondary border-l border-border-color; /* Base styles from HTML */
+}
+
+/* Styling for individual mobile nav links */
+#mobile-menu .nav-link.mobile {
+    @apply block text-base font-medium text-medium-text
+           px-3 py-3 /* Slightly more padding */
+           border-b border-border-color/30 /* Subtle separator */
+           transition-all duration-300 ease-out
+           transform translate-x-4 opacity-0 /* Initial state for animation */
+           hover:bg-tertiary/50 hover:text-accent; /* Subtle hover */
+}
+/* Remove border from last link */
+#mobile-menu nav > a:last-child {
+     @apply border-b-0;
+}
+
+/* Active state for mobile link */
+#mobile-menu .nav-link.mobile.active {
+    @apply bg-accent text-white font-semibold hover:bg-accent hover:text-white;
+}
+
+/* === Mobile Menu Animations === */
+
+/* When menu is open, animate links in */
+#mobile-menu.open .nav-link.mobile {
+    @apply transform translate-x-0 opacity-100;
+}
+
+/* Apply staggered delay to links */
+#mobile-menu.open nav > a:nth-child(1) { transition-delay: 0.1s; }
+#mobile-menu.open nav > a:nth-child(2) { transition-delay: 0.15s; }
+#mobile-menu.open nav > a:nth-child(3) { transition-delay: 0.2s; }
+#mobile-menu.open nav > a:nth-child(4) { transition-delay: 0.25s; }
+#mobile-menu.open nav > a:nth-child(5) { transition-delay: 0.3s; }
+/* Add more if you have more links */
+
+
+/* Keep existing rules for slide-in/overlay */
+#mobile-menu.open { @apply transform translate-x-0; }
+#mobile-menu-overlay { transition: opacity 0.3s ease-in-out; }
+#mobile-menu-overlay.visible { @apply block opacity-100; }
+
+/* --- Other CSS Rules --- */
+/* ... keep all other existing styles for header, components, etc. ... */
